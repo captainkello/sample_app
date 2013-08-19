@@ -17,6 +17,7 @@ describe "Static pages" do
       expect(page).to have_content('Help')
     end
   end
+<<<<<<< HEAD
 
   describe "About page" do
 
@@ -26,3 +27,6 @@ describe "Static pages" do
     end
   end
 end
+=======
+end
+>>>>>>> static-pages
