@@ -5,7 +5,6 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-<<<<<<< HEAD
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -27,7 +26,6 @@
     </header>
     <div class="container">
       <%= yield %>
-=======
 <%= render 'layouts/shim' %>
   </head>
   <body>
@@ -35,7 +33,6 @@
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>
->>>>>>> add-partials
     </div>
   </body>
 </html>
