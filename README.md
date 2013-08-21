@@ -24,3 +24,5 @@ In this case, we only have one validation, so we know which one failed, but it c
 => ["Name can't be blank"]
 (The error message is a hint that Rails validates the presence of an attribute using the blank? method,
 
+Here the regex VALID_EMAIL_REGEX is a constant, indicated in Ruby by a name starting with a capital letter.
+
