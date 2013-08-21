@@ -16,3 +16,11 @@ This is the first time we’ve seen the command to create a test database with t
 $ bundle exec rake test:prepare
 
 This just ensures that the data model from the development database, db/development.sqlite3, is reflected in the test database, db/test.sqlite3.9 (Failure to run this Rake task after a migration is a common source of confusion. In addition, sometimes the test database gets corrupted and needs to be reset. If your test suite is mysteriously breaking, be sure to try running rake test:prepare to see if that fixes the problem.)
+
+
+In this case, we only have one validation, so we know which one failed, but it can still be helpful to check using the errors object generated on failure:
+
+>> user.errors.full_messages
+=> ["Name can't be blank"]
+(The error message is a hint that Rails validates the presence of an attribute using the blank? method,
+
