@@ -18,11 +18,13 @@ $ bundle exec rake test:prepare
 This just ensures that the data model from the development database, db/development.sqlite3, is reflected in the test database, db/test.sqlite3.9 (Failure to run this Rake task after a migration is a common source of confusion. In addition, sometimes the test database gets corrupted and needs to be reset. If your test suite is mysteriously breaking, be sure to try running rake test:prepare to see if that fixes the problem.)
 
 
-In this case, we only have one validation, so we know which one failed, but it can still be helpful to check using the errors object generated on failure:
+Because we have already properly prepared the test database with rake test:prepare, the tests should pass:
 
 >> user.errors.full_messages
 => ["Name can't be blank"]
 (The error message is a hint that Rails validates the presence of an attribute using the blank? method,
 
 Here the regex VALID_EMAIL_REGEX is a constant, indicated in Ruby by a name starting with a capital letter.
+
+nother example of the RSpec boolean convention we saw in Section 6.2.1: whenever an object responds to a boolean method foo?, there is a corresponding test method called be_foo. 
 
