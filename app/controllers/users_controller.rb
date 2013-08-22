@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   private
 
     def user_params
@@ -25,7 +24,6 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 
-=======
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
@@ -34,9 +32,6 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-<<<<<<< HEAD
->>>>>>> user-signup
-=======
 
   private
 
@@ -44,6 +39,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-
->>>>>>> user-signup
 end
