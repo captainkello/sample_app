@@ -75,7 +75,6 @@ describe User do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
-<<<<<<< HEAD
 
   describe "User pages" do
 
@@ -89,6 +88,4 @@ describe User do
   end
 end
 end
-=======
-end
->>>>>>> user-signup
+
