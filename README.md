@@ -62,3 +62,25 @@ If you view your app running in production, it won’t work without a production
 
 (I find it confusing that the console, server, and migrate commands specify non-default environments in three mutually incompatible ways, which is why I bothered showing all three.)
 
+
+the authenticity token, which Rails automatically includes to thwart a particular kind of attack called a cross-site request forgery (CSRF).
+
+As we’ll see in Section 7.4, the key to creating a user is the special name attribute in each input:
+
+<input id="user_name" name="user[name]" - - - />
+.
+.
+.
+<input id="user_password" name="user[password]" - - - />
+These name values allow Rails to construct an initialization hash (via the params v
+
+Initializing the entire params hash is extremely dangerous—it arranges to pass to User.new all data submitted by a user. In particular, suppose that, in addition to the current attributes, the User model included an admin attribute used to identify administrative users of the site. (We will implement just such an attribute in Section 9.4.1.) The way to set such an attribute to true is to pass the value admin=’1’ as part of params[:user], a task that is easy to accomplish using a command-line HTTP client such as curl. The result would be that, by passing in the entire params hash to User.new, we would allow any user of the site to gain administrative access by including admin=’1’ in the web request.
+
+Previous versions of Rails used a method called attr_accessible in the model layer to solve this problem, but as of Rails 4.0 the preferred technique is to use so-called strong parameters in the controller layer. This allows us to specify which parameters are required and which ones are permitted. In addition, passing in a raw params hash as above will cause an error to be raised, so that Rails applications are now immune to mass assignment vulnerabilities by default.
+
+params.require(:user).permit(:name, :email, :password, :password_confirmation) :password_confirmation)
+    end
+end
+
+By the way, all of these methods—count, empty?, and any?—work on Ruby arrays as well. 
+
