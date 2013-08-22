@@ -28,3 +28,18 @@ Here the regex VALID_EMAIL_REGEX is a constant, indicated in Ruby by a name star
 
 nother example of the RSpec boolean convention we saw in Section 6.2.1: whenever an object responds to a boolean method foo?, there is a corresponding test method called be_foo. 
 
+FORM_FOR
+
+Let’s break this down into pieces. The presence of the do keyword indicates that form_for takes a block with one variable, which we’ve called f for “form”:
+
+<%= form_for(@user) do |f| %>
+  .
+  .
+  .
+<% end %>
+As is usually the case with Rails helpers, we don’t need to know any details about the implementation, but what we do need to know is what the f object does: when called with a method corresponding to an HTML form element—such as a text field, radio button, or password field—it returns code for that element specifically designed to set an attribute of the @user object. In other words,
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+creates the HTML needed to make a labeled text field element appropriate for setting the name attribute of a User model.
+
