@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   private
 
     def user_params
@@ -24,4 +25,9 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 
+=======
+  def create
+    @user = User.addAttributes()
+  end
+>>>>>>> user-signup
 end

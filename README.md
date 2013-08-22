@@ -43,6 +43,7 @@ As is usually the case with Rails helpers, we don’t need to know any details a
 <%= f.text_field :name %>
 creates the HTML needed to make a labeled text field element appropriate for setting the name attribute of a User model.
 
+<<<<<<< HEAD
 ========================
 
 Rails 4 has secure form submission Hoooray!!!!!
@@ -54,4 +55,24 @@ This hash gets passed to the Users controller as params, and we saw starting in 
  this is not the final implementation. The reason is that initializing the entire params hash is extremely dangerous—it arranges to pass to User.new all data submitted by a user. In particular, suppose that, in addition to the current attributes, the User model included an admin attribute used to identify administrative users of the site. (We will implement just such an attribute in Section 9.4.1.) The way to set such an attribute to true is to pass the value admin=’1’ as part of params[:user], a task that is easy to accomplish using a command-line HTTP client such as curl. The result would be that, by passing in the entire params hash to User.new, we would allow any user of the site to gain administrative access by including admin=’1’ in the web request.
 
 Previous versions of Rails used a method called attr_accessible in the model layer to solve this problem, but as of Rails 4.0 the preferred technique is to use so-called strong parameters in the controller layer. This allows us to specify which parameters are required and which ones are permitted. In addition, passing in a raw params hash as above will cause an error to be raised, so that Rails applications are now immune to mass assignment vulnerabilities by default.
+=======
+
+
+
+===================
+
+Rails console test
+rails console production
+
+As with the console, development is the default environment for the local Rails server, but you can also run it in a different environment:
+
+  $ rails server --environment production
+
+
+If you view your app running in production, it won’t work without a production database, which we can create by running rake db:migrate in production:
+
+  $ bundle exec rake db:migrate RAILS_ENV=production
+
+(I find it confusing that the console, server, and migrate commands specify non-default environments in three mutually incompatible ways, which is why I bothered showing all three.)
+>>>>>>> user-signup
 
