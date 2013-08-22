@@ -43,3 +43,22 @@ As is usually the case with Rails helpers, we don’t need to know any details a
 <%= f.text_field :name %>
 creates the HTML needed to make a labeled text field element appropriate for setting the name attribute of a User model.
 
+
+
+
+===================
+
+Rails console test
+rails console production
+
+As with the console, development is the default environment for the local Rails server, but you can also run it in a different environment:
+
+  $ rails server --environment production
+
+
+If you view your app running in production, it won’t work without a production database, which we can create by running rake db:migrate in production:
+
+  $ bundle exec rake db:migrate RAILS_ENV=production
+
+(I find it confusing that the console, server, and migrate commands specify non-default environments in three mutually incompatible ways, which is why I bothered showing all three.)
+
