@@ -98,3 +98,20 @@ params.require(:user).permit(:name, :email, :password, :password_confirmation) :
 By the way, all of these methods—count, empty?, and any?—work on Ruby arrays as well. 
 
 config.force_ssl = true
+
+
+  Unfortunately, as noted in the text and in the comment in Listing 8.10, this code isn’t quite right. The page looks fine, though, so what’s the problem? The issue is that the contents of the flash persist for one request, but—unlike a redirect, which we used in Listing 7.28—re-rendering a template with render doesn’t count as a request. The result is that the flash message persists one request longer than we want. For example, if we submit invalid information, the flash is set and gets displayed on the signin page (Figure 8.6); if we then click on another page, such as the Home page, that’s the first request since the form submission, and the flash gets displayed again 
+
+
+  By default, all the helpers are available in the views but not in the controllers.
+
+
+  This session object makes the user id available from page to page by storing it in a cookie that expires upon browser close. On each page, the application could simply call
+
+User.find(session[:remember_token])
+to retrieve the user. Because of the way Rails handles sessions, this process is secure; if a malicious user tries to spoof the user id, Rails will detect a mismatch based on a special session id generated for each session.
+
+
+
+ny large random string will do just fine, as long as it’s unique. The urlsafe_base64 method from the SecureRandom module in the Ruby standard library fits the bill:3 it returns a random string of length 16 composed of the characters A–Z, a–z, 0–9, “-”, and “_” (for a total of 64 possibilities, thus “base64”). This means that the probability of two remember tokens colliding is a negligibly small 1/6416=2−96≈10−29.
+
