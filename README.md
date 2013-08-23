@@ -94,7 +94,7 @@ Previous versions of Rails used a method called attr_accessible in the model lay
 
 params.require(:user).permit(:name, :email, :password, :password_confirmation) :password_confirmation)
     end
-end
 
 By the way, all of these methods—count, empty?, and any?—work on Ruby arrays as well. 
 
+config.force_ssl = true
