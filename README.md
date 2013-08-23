@@ -115,3 +115,5 @@ to retrieve the user. Because of the way Rails handles sessions, this process is
 
 ny large random string will do just fine, as long as it’s unique. The urlsafe_base64 method from the SecureRandom module in the Ruby standard library fits the bill:3 it returns a random string of length 16 composed of the characters A–Z, a–z, 0–9, “-”, and “_” (for a total of 64 possibilities, thus “base64”). This means that the probability of two remember tokens colliding is a negligibly small 1/6416=2−96≈10−29.
 
+20.years.from_now
+
