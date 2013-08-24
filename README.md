@@ -1,4 +1,13 @@
-This practice of evaluating || expressions from left to right and stopping on the first true value is known as short-circuit evaluation.
+ Whats is the diff between a callback and before filter?
+
+ db side or rb side?
+
+ # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  # config.force_ssl = true
+
+in config:environments:production.rb
+
+  This practice of evaluating || expressions from left to right and stopping on the first true value is known as short-circuit evaluation.
 
 
 In Rails 4.0, the preferred method to find by attribute is to use the find_by method instead, passing the attribute as a hash:
