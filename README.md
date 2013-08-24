@@ -1,6 +1,6 @@
- Whats is the diff between a callback and before filter?
+ Whats is the diff between a callback and before filter? Before filter uses the "Before Action command" in the Users Controller??
 
- db side or rb side?
+ Together with :success and :error, the :notice key completes our triumvirate of flash styles, all of which are supported natively by Bootstrap CSS.
 
  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
