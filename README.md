@@ -1,31 +1,24 @@
 This practice of evaluating || expressions from left to right and stopping on the first true value is known as short-circuit evaluation.
 
 
-The table name is plural (users) even though the model name is singular (User), which reflects a linguistic convention followed by Rails:
-
-Starting in Rails 4.0, the preferred method to find by attribute is to use the find_by method instead, passing the attribute as a hash:
+In Rails 4.0, the preferred method to find by attribute is to use the find_by method instead, passing the attribute as a hash:
 
 >> User.find_by(email: "mhartl@example.com")
 
 The update_attributes method accepts a hash of attributes, and on success performs both the update and the save in one step (returning true to indicate that the save went through). Note that if any of the validations fail, such as when a password is required to save a record (as implemented in Section 6.3), the call to update_attributes will fail. If we only need to update a single attribute, using the singular update_attribute bypasses this restriction:
 
 
-This is the first time we’ve seen the command to create a test database with the correct structure:
+The command to create a test database:
 
 $ bundle exec rake test:prepare
 
 This just ensures that the data model from the development database, db/development.sqlite3, is reflected in the test database, db/test.sqlite3.9 (Failure to run this Rake task after a migration is a common source of confusion. In addition, sometimes the test database gets corrupted and needs to be reset. If your test suite is mysteriously breaking, be sure to try running rake test:prepare to see if that fixes the problem.)
 
 
-Because we have already properly prepared the test database with rake test:prepare, the tests should pass:
-
->> user.errors.full_messages
-=> ["Name can't be blank"]
-(The error message is a hint that Rails validates the presence of an attribute using the blank? method,
 
 Here the regex VALID_EMAIL_REGEX is a constant, indicated in Ruby by a name starting with a capital letter.
 
-nother example of the RSpec boolean convention we saw in Section 6.2.1: whenever an object responds to a boolean method foo?, there is a corresponding test method called be_foo. 
+Another example of the RSpec boolean convention we saw in Section 6.2.1: whenever an object responds to a boolean method foo?, there is a corresponding test method called be_foo. 
 
 FORM_FOR
 
@@ -63,12 +56,10 @@ Previous versions of Rails used a method called attr_accessible in the model lay
 Rails console test
 rails console production
 
-As with the console, development is the default environment for the local Rails server, but you can also run it in a different environment:
-
   $ rails server --environment production
 
 
-If you view your app running in production, it won’t work without a production database, which we can create by running rake db:migrate in production:
+it won’t work without a production database, which we can create by running rake db:migrate in production:
 
   $ bundle exec rake db:migrate RAILS_ENV=production
 
