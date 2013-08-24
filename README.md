@@ -1,8 +1,7 @@
-Rails method csrf_meta_tags, which prevents cross-site request forgery (CSRF), a type of malicious web attack.
+This practice of evaluating || expressions from left to right and stopping on the first true value is known as short-circuit evaluation.
 
-Note that, in contrast to the plural convention for controller names, model names are singular: a Users controller, but a User model.) 
 
-he table name is plural (users) even though the model name is singular (User), which reflects a linguistic convention followed by Rails:
+The table name is plural (users) even though the model name is singular (User), which reflects a linguistic convention followed by Rails:
 
 Starting in Rails 4.0, the preferred method to find by attribute is to use the find_by method instead, passing the attribute as a hash:
 
@@ -112,8 +111,7 @@ User.find(session[:remember_token])
 to retrieve the user. Because of the way Rails handles sessions, this process is secure; if a malicious user tries to spoof the user id, Rails will detect a mismatch based on a special session id generated for each session.
 
 
-
-ny large random string will do just fine, as long as it’s unique. The urlsafe_base64 method from the SecureRandom module in the Ruby standard library fits the bill:3 it returns a random string of length 16 composed of the characters A–Z, a–z, 0–9, “-”, and “_” (for a total of 64 possibilities, thus “base64”). This means that the probability of two remember tokens colliding is a negligibly small 1/6416=2−96≈10−29.
+The urlsafe_base64 method from the SecureRandom module in the Ruby standard library fits the bill:3 it returns a random string of length 16 composed of the characters A–Z, a–z, 0–9, “-”, and “_” (for a total of 64 possibilities, thus “base64”). This means that the probability of two remember tokens colliding is a negligibly small 1/6416=2−96≈10−29.
 
 20.years.from_now
 
