@@ -115,3 +115,10 @@ The urlsafe_base64 method from the SecureRandom module in the Ruby standard libr
 
 20.years.from_now
 
+will_paginate and ...
+
+Here Rails infers that @users is a list of User objects; moreover, when called with a collection of users, Rails automatically iterates through them and renders each one with the _user.html.erb partial. The result is the impressively compact code
+
+<ul class="users" %>
+	<%= render @users %>
+</ul>
