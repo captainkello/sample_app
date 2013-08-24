@@ -133,3 +133,24 @@ Because of this danger, it is essential to pass parameters that have been proces
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    
+
+You can also deploy the application and even populate the production database with sample users (using the pg:reset task to reset the production database):
+
+$ git push heroku
+$ heroku pg:reset DATABASE
+$ heroku run rake db:migrate
+$ heroku run rake db:populate
+To get the changes to show up, you may have to force an app restart at Heroku:
+
+$ heroku restart
+
+
+You can also deploy the application and even populate the production database with sample users (using the pg:reset task to reset the production database):
+
+$ git push heroku
+$ heroku pg:reset DATABASE
+$ heroku run rake db:migrate
+$ heroku run rake db:populate
+To get the changes to show up, you may have to force an app restart at Heroku:
+
+$ heroku restart
