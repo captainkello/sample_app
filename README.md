@@ -121,4 +121,15 @@ Here Rails infers that @users is a list of User objects; moreover, when called w
 
 <ul class="users" %>
 	<%= render @users %>
-</ul>
+
+
+	malicious user could send a PATCH request as follows:7
+
+patch /users/17?admin=1
+This request would make user 17 an admin, which would be a potentially serious security breach, to say the least.
+
+Because of this danger, it is essential to pass parameters that have been processed to permit only safe-to-edit attributes. As noted in Section 7.3.2, this is accomplished using strong parameters by calling require and permit on the params hash:
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   
