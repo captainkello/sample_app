@@ -8,7 +8,11 @@ class UsersController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
   	@user = User.find(params[:id])
+=======
+    @user = User.find(params[:id])
+>>>>>>> fix-home
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
