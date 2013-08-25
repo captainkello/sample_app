@@ -1,4 +1,18 @@
- Whats is the diff between a callback and before filter? Before filter uses the "Before Action command" in the Users Controller??
+$ heroku pg:reset DATABASE
+$ heroku run rake db:migrate
+$ heroku run rake db:populate
+$ heroku restart
+
+ user = User.create(name: "Example User", email: "user@example.com")
+>> user.email.upcase
+=> "USER@EXAMPLE.COM"
+>> user_with_same_email = user.dup
+>> user_with_same_email.email = user.email.upcase
+>> user_with_same_email.valid?
+
+
+
+Whats is the diff between a callback and before filter? Before filter uses the "Before Action command" in the Users Controller??
 
  Together with :success and :error, the :notice key completes our triumvirate of flash styles, all of which are supported natively by Bootstrap CSS.
 
