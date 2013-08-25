@@ -166,3 +166,11 @@ user.microposts.create
 user.microposts.create!
 user.microposts.build
 
+
+
+
+To pass the object to the partial, we use a hash with value equal to the object and key equal to the desired name of the variable in the partial, which is what this code accomplishes:
+
+<%= render 'shared/error_messages', object: f.object %>
+
+
