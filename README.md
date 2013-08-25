@@ -154,3 +154,15 @@ $ heroku run rake db:populate
 To get the changes to show up, you may have to force an app restart at Heroku:
 
 $ heroku restart
+
+INSEAD OF===>
+
+Micropost.create
+Micropost.create!
+Micropost.new
+we have
+
+user.microposts.create
+user.microposts.create!
+user.microposts.build
+
