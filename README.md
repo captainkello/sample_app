@@ -1,3 +1,7 @@
+user.microposts.create!(arg)  Create a micropost (exception on failure)
+
+user.microposts.build(arg)  Return a new Micropost object (user_id = user.id).
+
 $ heroku pg:reset DATABASE
 $ heroku run rake db:migrate
 $ heroku run rake db:populate
