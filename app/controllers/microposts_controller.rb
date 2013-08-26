@@ -7,20 +7,14 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
-<<<<<<< HEAD
-=======
       @feed_items = []
->>>>>>> fix-home
       render 'static_pages/home'
     end
   end
 
   def destroy
-<<<<<<< HEAD
-=======
     @micropost.destroy
     redirect_to root_url
->>>>>>> fix-home
   end
 
   private
@@ -28,12 +22,9 @@ class MicropostsController < ApplicationController
     def micropost_params
       params.require(:micropost).permit(:content)
     end
-<<<<<<< HEAD
-=======
 
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
       redirect_to root_url if @micropost.nil?
     end
->>>>>>> fix-home
 end
