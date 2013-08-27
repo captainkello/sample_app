@@ -1,3 +1,10 @@
+let(:relationship) { follower.relationships.build(followed_id: followed.id) }
+
+!!!!!! first one should be follower_id ?????
+
+11.16
+
+
 require 'spec_helper'
 
 describe "User pages" do
