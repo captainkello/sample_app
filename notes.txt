@@ -7,23 +7,7 @@ let(:relationship) { follower.relationships.build(followed_id: followed.id) }
 install postgres with pg gem?
 
 pgAdmin
-
-
--------------------------------------
-
-# no .a files
-*.a
-# but do track lib.a, even though you're ignoring .a files above
-!lib.a
-# only ignore the root TODO file, not subdir/TODO
-/TODO
-# ignore all files in the build/ directory
-build/
-# ignore doc/notes.txt, but not doc/server/arch.txt
-doc/*.txt
-# ignore all .txt files in the doc/ directory
-doc/**/*.txt
-
+===========================================
 
 It’s important to note that git diff by itself doesn’t show all changes made since your last commit — only changes that are still unstaged. This can be confusing, because if you’ve staged all of your changes, git diff will give you no output.
 
